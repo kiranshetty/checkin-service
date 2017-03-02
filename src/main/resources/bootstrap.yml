@@ -1,0 +1,15 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: checkin
+  cloud:
+    config:
+      uri: http://localhost:8889
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+management:
+  security:
+    enabled: false
