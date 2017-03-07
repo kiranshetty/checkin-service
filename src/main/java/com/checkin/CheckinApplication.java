@@ -12,28 +12,28 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 @RefreshScope
 @RestController
-public class CheckinApplication  {
+public class CheckinApplication {
 
-  @Value("${name:name not found}")
-  String name;
+	@Value("${service:service not found}")
+	String service;
 
-  @Value("${gender:gender not found}")
-  String gender;
+	@Value("${endpoint:endpoint not found}")
+	String endpoint;
 
-  @RequestMapping("/")
-  public String home() {
-	  
-	  StringBuilder strBuilder = new StringBuilder("Hello ");
-	  strBuilder.append(name);
-	  strBuilder.append("<br>");
-	  strBuilder.append("Gender: ");
-	  strBuilder.append(gender);
-	  
-    return strBuilder.toString();
-  }
+	@RequestMapping("/")
+	public String home() {
 
-  public static void main(String[] args) {
-    SpringApplication.run(CheckinApplication.class, args);
-  }
+		StringBuilder strBuilder = new StringBuilder("Service Name: ");
+		strBuilder.append(service);
+		strBuilder.append("<br>");
+		strBuilder.append("Endpoint: ");
+		strBuilder.append(endpoint);
+
+		return strBuilder.toString();
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(CheckinApplication.class, args);
+	}
 
 }
